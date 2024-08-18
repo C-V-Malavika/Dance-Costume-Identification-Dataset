@@ -12,24 +12,15 @@ import os
 # Kuchipudi
 # Bharatanatyam
 
-image_files = [(file, dirs[0]) for dirs in os.walk('./Dataset_Test', topdown = False) for file in dirs[2]]
+filename = f'Dataset_Test_without_Background/Bharatanatyam/Bharatanatyam-1.png'
+print(filename)
+image = cv2.imread(filename, cv2.IMREAD_GRAYSCALE)
+image_display = cv2.resize(image, (510, 510))
 
-for item in image_files:
+# Apply Canny edge detection
+canny_edges = cv2.Canny(image, threshold1 = 50, threshold2 = 100)
+image = cv2.resize(canny_edges, (510, 510))
 
-    print(item)
-
-    folder = item[1]
-    
-    # Load an image in gray scale
-    filename = f'{folder}/{item[0]}'
-    print(filename)
-    image = cv2.imread(filename, cv2.IMREAD_GRAYSCALE)
-    image_display = cv2.resize(image, (510, 510))
-
-    # Apply Canny edge detection
-    canny_edges = cv2.Canny(image, threshold1 = 50, threshold2 = 100)
-    image = cv2.resize(canny_edges, (510, 510))
-
-    # For Saving the image
-    image_tosave = Image.fromarray(image.astype(np.uint8))
-    image_tosave.save(f'50_100_Test/{folder.strip('./Dataset_Test\\')}/{item[0]}', 'PNG')
+# For Saving the image
+image_tosave = Image.fromarray(image.astype(np.uint8))
+image_tosave.save(f'50_100_Test/Bharatanatyam/Bharatanatyam-1.png', 'PNG')
