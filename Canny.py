@@ -3,7 +3,6 @@
 
 import cv2
 from PIL import Image
-import PIL
 import numpy as np
 import os
 
