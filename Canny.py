@@ -7,11 +7,6 @@ import PIL
 import numpy as np
 import os
 
-# Kathakali
-# Mohiniyattam
-# Kuchipudi
-# Bharatanatyam
-
 filename = f'Test_Dataset_without_Background/Bharatanatyam/Bharatanatyam-1.png'
 print(filename)
 image = cv2.imread(filename, cv2.IMREAD_GRAYSCALE)
