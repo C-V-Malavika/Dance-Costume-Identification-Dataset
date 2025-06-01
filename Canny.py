@@ -15,7 +15,6 @@ import os
 filename = f'Test_Dataset_without_Background/Bharatanatyam/Bharatanatyam-1.png'
 print(filename)
 image = cv2.imread(filename, cv2.IMREAD_GRAYSCALE)
-image_display = cv2.resize(image, (510, 510))
 
 # Apply Canny edge detection
 canny_edges = cv2.Canny(image, threshold1 = 50, threshold2 = 100)
