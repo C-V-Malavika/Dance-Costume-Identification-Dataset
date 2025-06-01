@@ -12,7 +12,7 @@ import os
 # Kuchipudi
 # Bharatanatyam
 
-filename = f'Dataset_Test_without_Background/Bharatanatyam/Bharatanatyam-1.png'
+filename = f'Test_Dataset_without_Background/Bharatanatyam/Bharatanatyam-1.png'
 print(filename)
 image = cv2.imread(filename, cv2.IMREAD_GRAYSCALE)
 image_display = cv2.resize(image, (510, 510))
