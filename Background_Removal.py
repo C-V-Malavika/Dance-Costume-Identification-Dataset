@@ -1,3 +1,6 @@
+# pip install rembg
+# pip install opencv-python
+
 from rembg import remove
 import cv2
 
